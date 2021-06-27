@@ -1,10 +1,11 @@
 const fs = require('fs');
+const path = require('path');
 const jsyaml = require('js-yaml');
 
-const data = jsyaml.load(fs.readFileSync('./data.yaml'));
+const data = jsyaml.load(fs.readFileSync(path.resolve(__dirname, 'data.yaml')));
 
 const filtered_data = data.map(d => {
-  if(d.A instanceof Array) {
+  if (d.A instanceof Array) {
     return {
       id: 'id',
       content: d.Q,
@@ -22,4 +23,4 @@ const filtered_data = data.map(d => {
   }
 })
 
-fs.writeFileSync('./d.json', JSON.stringify(filtered_data), 'utf-8');
+fs.writeFileSync(path.resolve(__dirname, './d.json'), JSON.stringify(filtered_data), 'utf-8');
