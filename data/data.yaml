@@ -487,8 +487,8 @@
   C:
     - admin
     - root
-    - user
-    - developer
+    - linux
+    - system
   A: 1
 - Q: 在 Linux 的各个虚拟控制台间切换的快捷键是：
   C:
@@ -595,7 +595,8 @@
   C:
     - 笔
     - 手表
-    - mp3
+    - 智能手环
+    - 卫生纸
   A:
     - 0
     - 1
@@ -798,21 +799,6 @@
     - cp
     - mv
   A: 0
-- Q: NOI 比赛中提供的 C++ IDE 环境除了 GUIDE 之外，还有
-  C:
-    - Anjuta
-    - vi
-    - gedit
-    - Lazarus
-  A:
-    - 0
-- Q: 在 NOI 比赛中， 编辑源代码除了可以用 GUIDE、 Lazarus、 Anjuta 等集成开发环境（IDE） 之外，还可以使用
-  C:
-    - vi
-    - gedit
-  A:
-    - 0
-    - 1
 - Q: NOI 比赛每场上机考试的比赛时间是
   C:
     - 5 小时
