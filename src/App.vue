@@ -1,42 +1,34 @@
 <template>
   <header>
     <ul class="appnav mt-2 mb-2 nav justify-content-center">
-      <li>
-        <span class="nav-link" @click="() => (this.route = 'home')">首页</span>
+      <li class="nav-link">
+        <router-link to="/">首页</router-link>
       </li>
-      <li>
-        <span class="nav-link" @click="() => (this.route = 'test')">测试</span>
+      <li class="nav-link">
+        <router-link to="/probset">题库</router-link>
       </li>
-      <li>
-        <span class="nav-link" @click="() => (this.route = 'retest')"
-          >错题集
+      <li class="nav-link">
+        <router-link to="/test">测试</router-link>
+      </li>
+      <li class="nav-link">
+        <router-link to="/retest">错题集
           <span v-if="wrong_count" class="badge bg-secondary">{{
-            wrong_count
-          }}</span></span
-        >
+              wrong_count
+          }}</span>
+        </router-link>
       </li>
     </ul>
   </header>
 
   <main style="max-width: 700px; margin: 0 auto" class="flex-shrink-0">
-    <keep-alive>
-      <component
-        :is="currentPage"
-        @start="onStart"
-        @routeto="(path) => (this.route = path)"
-      />
-    </keep-alive>
-    <!-- <home-page v-if="route === 'home'"  />
-    <test-page
-      v-if="route === 'test'"
-    />
-    <retest-page
-      v-if="route === 'retest'"
-      @routeto="(path) => (this.route = path)"
-    /> -->
+    <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
   </main>
 
-  <footer class="footer fixed-bottom py-3 bg-light">
+  <footer class="footer fixed-bottom py-2 bg-light">
     <div class="container">
       <span class="text-muted">Last Build Time: {{ build_time }}</span>
     </div>
@@ -89,6 +81,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
 .appnav li span:hover {
   cursor: pointer;
 }

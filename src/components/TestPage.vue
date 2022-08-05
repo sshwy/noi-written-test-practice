@@ -4,33 +4,16 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">NOI 2022 背笔试</li>
-          <li class="breadcrumb-item active" aria-current="page">测试</li>
+          <li class="breadcrumb-item active">测试</li>
         </ol>
       </nav>
     </div>
-    <question-card
-      v-if="has_prob"
-      :data="prob"
-      @next="onNextProblem"
-      @wrong-attempt="onWrongAttempt"
-    />
+    <question-card v-if="has_prob" :data="prob" @next="++qindex" @wrong-attempt="onWrongAttempt" />
     <div v-else-if="finish">
       <div class="mb-3">恭喜你完成所有的试题！</div>
       <div class="d-grid gap-2">
-        <button
-          class="btn btn-primary"
-          type="button"
-          @click="() => this.$emit('routeto', 'home')"
-        >
-          回到主页
-        </button>
-        <button
-          class="btn btn-primary"
-          type="button"
-          @click="() => this.$emit('routeto', 'retest')"
-        >
-          查看错题
-        </button>
+        <router-link class="btn btn-primary" to="/">回到主页</router-link>
+        <router-link class="btn btn-primary" to="/retest">查看错题</router-link>
       </div>
     </div>
   </div>
@@ -40,7 +23,6 @@
 import QuestionCard from "./QuestionCard/index.vue";
 
 export default {
-  emits: ["routeto"],
   components: {
     QuestionCard,
   },
@@ -72,9 +54,6 @@ export default {
     },
   },
   methods: {
-    onNextProblem() {
-      ++this.qindex;
-    },
     onWrongAttempt(data) {
       this.$store.commit("addwrong", data);
     },

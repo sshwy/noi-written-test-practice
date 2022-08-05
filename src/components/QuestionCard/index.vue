@@ -4,18 +4,8 @@
       Problem No. <span class="fw-bold">{{ data.current }}</span> /
       <span>{{ data.total }} </span>
     </div>
-    <question-card-select
-      v-if="data.type === 'select'"
-      :data="data"
-      @next="onNext"
-      @wrong="onWrong"
-    />
-    <question-card-multi-select
-      v-else-if="data.type === 'multiselect'"
-      :data="data"
-      @next="onNext"
-      @wrong="onWrong"
-    />
+    <question-card-select v-if="data.type === 'select'" :data="data" @next="$emit('next')" @wrong="onWrong" />
+    <question-card-multi-select v-else-if="data.type === 'multiselect'" :data="data" @next="onNext" @wrong="onWrong" />
     <div v-else>Unknown Type of Question!</div>
   </div>
 </template>
@@ -37,9 +27,6 @@ export default {
     },
   },
   methods: {
-    onNext() {
-      this.$emit("next");
-    },
     onWrong() {
       this.$emit("wrongAttempt", this.$props.data);
     },
@@ -51,10 +38,12 @@ export default {
 .choice-list {
   margin: 1em 0;
 }
+
 .choice-list-item {
   transition: 0.2s all ease;
   text-align: inherit;
 }
+
 .choice-list-item:hover {
   z-index: 1;
   color: #495057;

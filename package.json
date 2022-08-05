@@ -3,20 +3,22 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "node data/script.js && vue-cli-service serve",
-    "build": "node data/script.js && vue-cli-service build"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "js-yaml": "^4.1.0",
     "register-service-worker": "^1.7.1",
     "vue": "^3.2.13",
+    "vue-router": "4",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-pwa": "~5.0.8",
     "@vue/cli-service": "~5.0.0",
-    "@vue/compiler-sfc": "^3.2.37"
+    "@vue/compiler-sfc": "^3.2.37",
+    "yaml-loader": "^0.8.0"
   }
 }

@@ -3,19 +3,12 @@
     <h5 class="card-title">单选题</h5>
     <p class="card-text" v-html="render(data.content)" />
     <div class="list-group choice-list">
-      <button
-        v-for="(text, index) in data.choices"
-        :key="index"
-        type="button"
-        :class="[
-          'choice-list-item',
-          'list-group-item',
-          this.detectExtraStyle(index),
-        ]"
-        @click="() => onSelect(index)"
-      >
-        <span class="choice-marker">{{ marker(index) }}</span
-        >.
+      <button v-for="(text, index) in data.choices" :key="index" type="button" :class="[
+        'choice-list-item',
+        'list-group-item',
+        this.detectExtraStyle(index),
+      ]" @click="() => onSelect(index)">
+        <span class="choice-marker">{{ marker(index) }}</span>.
         <span class="choice-text">{{ text }}</span>
       </button>
     </div>

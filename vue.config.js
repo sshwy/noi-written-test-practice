@@ -7,5 +7,11 @@ process.env.VUE_APP_BUILD_TIME = (new Date()).toString()
  */
 module.exports = {
   publicPath: '/static/beibishi2022/', // 部署到博客上
-  // 选项...
+  chainWebpack: config => {
+    config.module
+      .rule('yaml')
+      .test(/\.ya?ml?$/)
+      .use('yaml-loader')
+      .loader('yaml-loader')
+  }
 }

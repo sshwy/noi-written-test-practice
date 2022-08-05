@@ -8,21 +8,15 @@
       <p>祝所有参赛者 NOI 2022 rp++！</p>
     </div>
     <div class="d-grid gap-2">
-      <button
-        type="button"
-        class="btn btn-primary btn-lg"
-        @click="() => this.$emit('start')"
-      >
+      <router-link to="/test" class="btn btn-primary btn-lg">
         开始
-      </button>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  emits: ["start"],
-};
+export default {};
 </script>
 
 <style>

@@ -8,32 +8,15 @@
         </ol>
       </nav>
     </div>
-    <question-card
-      v-if="has_prob"
-      :data="prob"
-      @next="onNextProblem"
-      @wrong-attempt="onWrongAttempt"
-    />
+    <question-card v-if="has_prob" :data="prob" @next="onNextProblem" @wrong-attempt="onWrongAttempt" />
     <div v-else-if="empty">
       <div class="mb-3">看起来你并没有错题 ^_^</div>
     </div>
     <div v-else-if="finish">
       <div class="mb-3">恭喜你完成所有的错题！</div>
       <div class="d-grid gap-2">
-        <button
-          class="btn btn-primary"
-          type="button"
-          @click="() => this.$emit('routeto', 'home')"
-        >
-          回到主页
-        </button>
-        <button
-          class="btn btn-primary"
-          type="button"
-          @click="() => (this.qindex = 0)"
-        >
-          再做一次
-        </button>
+        <router-link class="btn btn-primary" to="/">回到主页</router-link>
+        <button class="btn btn-primary" type="button" @click="qindex = 0">再做一次</button>
       </div>
     </div>
   </div>
@@ -43,7 +26,6 @@
 import QuestionCard from "./QuestionCard/index.vue";
 
 export default {
-  emits: ["routeto"],
   components: {
     QuestionCard,
   },
@@ -53,7 +35,6 @@ export default {
     };
   },
   created() {
-    console.log("created");
     this.qindex = 0;
   },
   computed: {
