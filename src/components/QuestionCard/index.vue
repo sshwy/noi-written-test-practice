@@ -5,7 +5,7 @@
       <span>{{ data.total }} </span>
     </div>
     <question-card-select v-if="data.type === 'select'" :data="data" @next="$emit('next')" @wrong="onWrong" />
-    <question-card-multi-select v-else-if="data.type === 'multiselect'" :data="data" @next="onNext" @wrong="onWrong" />
+    <question-card-multi-select v-else-if="data.type === 'multiselect'" :data="data" @next="$emit('next')" @wrong="onWrong" />
     <div v-else>Unknown Type of Question!</div>
   </div>
 </template>
