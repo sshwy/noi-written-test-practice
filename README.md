@@ -1,4 +1,4 @@
-# NOI 2022 在线背笔试（~~被鄙视~~）
+# NOI 2023 在线背笔试（~~被鄙视~~）
 
 目前部署在 [这里](https://notes.sshwy.name/static/beibishi2022)。
 

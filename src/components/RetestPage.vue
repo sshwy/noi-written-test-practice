@@ -3,7 +3,7 @@
     <div class="mb-3 text-muted">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">NOI 2022 背笔试</li>
+          <li class="breadcrumb-item">NOI 2023 背笔试</li>
           <li class="breadcrumb-item active" aria-current="page">错题集</li>
         </ol>
       </nav>
@@ -69,5 +69,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
