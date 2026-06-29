@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { useLocalStorage } from '@vueuse/core'
 import data from "../data/data.yaml";
 
 function array_shuffle(arr) {
@@ -22,11 +23,13 @@ const converted = data.map((o, idx) => {
   }
 })
 
+const wrong = useLocalStorage('noi-written-test-wrong', [])
+
 const store = createStore({
   state: {
     data: [...converted],
     qlist: array_shuffle(converted),
-    wrong: [],
+    wrong,
   },
   mutations: {
     shuffle(state) {
@@ -35,6 +38,9 @@ const store = createStore({
     addwrong(state, data) {
       if (state.wrong.some(e => e.id === data.id)) return;
       state.wrong.push(data);
+    },
+    clearwrong(state) {
+      state.wrong.splice(0, state.wrong.length);
     },
   },
 })

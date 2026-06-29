@@ -21,7 +21,7 @@
       <span class="fw-bold">回答正确 ^_^</span>
     </div>
     <div v-if="status === 'wrong'">
-      <span class="fw-bold text-danger">回答错误 >_&lt;</span>
+      <span class="fw-bold text-danger">回答错误，请重新选择 >_&lt;</span>
     </div>
   </div>
 </template>

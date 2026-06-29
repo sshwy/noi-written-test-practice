@@ -1,5 +1,5 @@
 <template>
-  <div class="test-page container-sm">
+  <div class="test-page container-sm retest-page">
     <page-breadcrumb current="错题集" />
     <question-card v-if="has_prob" :data="prob" @next="onNextProblem" @wrong-attempt="onWrongAttempt" />
     <div v-else-if="empty">
@@ -11,6 +11,15 @@
         <router-link class="btn btn-primary" to="/">回到主页</router-link>
         <button class="btn btn-primary" type="button" @click="qindex = 0">再做一次</button>
       </div>
+    </div>
+    <div v-if="!empty" class="retest-clear-bar">
+      <button
+        type="button"
+        class="btn btn-danger"
+        @click="onClearWrong"
+      >
+        清空错题
+      </button>
     </div>
   </div>
 </template>
@@ -60,8 +69,23 @@ export default {
     onWrongAttempt(data) {
       this.$store.commit("addwrong", data);
     },
+    onClearWrong() {
+      if (!confirm("确定要清空所有错题吗？")) return;
+      this.$store.commit("clearwrong");
+      this.qindex = 0;
+    },
   },
 };
 </script>
 
-<style></style>
+<style>
+.retest-page {
+  padding-bottom: 5rem;
+}
+
+.retest-clear-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+</style>
