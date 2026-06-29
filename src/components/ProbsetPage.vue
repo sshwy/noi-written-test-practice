@@ -1,13 +1,6 @@
 <template>
   <div class="container-sm pb-5">
-    <div class="mb-3 text-muted">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">NOI 2023 背笔试</li>
-          <li class="breadcrumb-item active" aria-current="page">题库</li>
-        </ol>
-      </nav>
-    </div>
+    <page-breadcrumb current="题库" />
     <div class="alert alert-info" role="alert">
       <strong>注意</strong> 在 2023 年的笔试题库中相比于 2022 改动的题目有：
       <ol class="pt-2 mb-0">
@@ -32,7 +25,12 @@
 </template>
 <script>
 import { render } from "./utils";
+import PageBreadcrumb from "./PageBreadcrumb.vue";
+
 export default {
+  components: {
+    PageBreadcrumb,
+  },
   methods: {
     render,
   },

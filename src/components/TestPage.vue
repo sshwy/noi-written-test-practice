@@ -1,13 +1,6 @@
 <template>
   <div class="test-page container-sm">
-    <div class="mb-3 text-muted">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">NOI 2023 背笔试</li>
-          <li class="breadcrumb-item active">测试</li>
-        </ol>
-      </nav>
-    </div>
+    <page-breadcrumb current="测试" />
     <question-card v-if="has_prob" :data="prob" @next="++qindex" @wrong-attempt="onWrongAttempt" />
     <div v-else-if="finish">
       <div class="mb-3">恭喜你完成所有的试题！</div>
@@ -21,10 +14,12 @@
 
 <script>
 import QuestionCard from "./QuestionCard/index.vue";
+import PageBreadcrumb from "./PageBreadcrumb.vue";
 
 export default {
   components: {
     QuestionCard,
+    PageBreadcrumb,
   },
   data() {
     return {
