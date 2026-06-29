@@ -18,7 +18,7 @@ export default {
     },
     root: {
       type: String,
-      default: "NOI 2023 背笔试",
+      default: "NOI 2026 背笔试",
     },
   },
 };

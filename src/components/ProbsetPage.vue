@@ -2,7 +2,7 @@
   <div class="container-sm pb-5">
     <page-breadcrumb current="题库" />
     <div class="alert alert-info" role="alert">
-      <strong>注意</strong> 在 2026 年的笔试题库中相比于 2026 改动的题目有：
+      <strong>注意</strong> 在 2026 年的笔试题库中相比于 2023 改动的题目有：
       <ol class="pt-2 mb-0">
         <li><strong>新增题目</strong> 选手丢失密码条，会扣几分：扣 5 分</li>
         <li><strong>新增题目</strong> 在评测考生答案时，如果某测试点的运行内存超过内存限制，则：程序不能正常运行，该测试点得 0 分</li>
@@ -18,7 +18,7 @@
         <li><strong>修改答案</strong> vim 编辑器中查找字符串「12」：仅 /12（去掉 ?12）</li>
         <li><strong>修改答案</strong> 用来全面管理计算机硬件和软件资源的软件叫：由多选改为单选，答案为操作系统</li>
       </ol>
-      <strong>注意</strong> 在 2026 年的笔试题库中相比于 2022 改动的题目有：
+      <strong>注意</strong> 在 2023 年的笔试题库中相比于 2022 改动的题目有：
       <ol class="pt-2 mb-0">
         <li><strong>删除题目</strong> 选手回答填空题，提交的答案中可以包含引号吗</li>
         <li><strong>修改答案</strong> 在 NOI Linux 中，从虚拟终端切换回桌面环境的快捷键是：Alt+F2</li>
